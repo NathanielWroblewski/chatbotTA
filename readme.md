@@ -13,7 +13,7 @@ To run locally, you'll need:
 First, export your Slack API key:
 
 ```sh
-$ export SLACK_API_KEY="your-slack-api-key-goes-here"
+$ export SLACK_API_TOKEN="your-slack-api-key-goes-here"
 ```
 
 Then, run the script:
