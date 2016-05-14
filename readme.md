@@ -23,3 +23,15 @@ $ node slackbot.js
 ```
 
 Chat with your bot via direct message in [Slack](https://slack.com/).  Ask it a question, and it will respond.
+
+Parsing the dataset
+---
+
+Unzip the forum dataset located at `./forum_data/forum_data.tar.gz`
+
+Use the parse data awk progfile to parse the data into a new `parsed_data.tsv`:
+
+```sh
+$ awk -f parse_data ./forum_data/forum_node.tsv > parsed_data.tsv
+```
+
