@@ -1,0 +1,5 @@
+BEGIN { filename = "file0"}
+
+NR % 5000 == 0 { filename = "file" i++ }
+
+{ print $0 > (filename) }

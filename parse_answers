@@ -1,0 +1,15 @@
+# to run: $ awk -f parse_answers ./forum_data/forum_node.tsv > ./forum_data/parsed_answers.json
+# $1 id, $2 title, $5 body, $6 type, $7 parent id
+
+BEGIN { FS="\t" }
+
+      { gsub(/ *<[^>]*> */, " ") }
+      { gsub(/"/, "") }
+
+$6 ~ /answer/ { hash[$1] = $5 }
+
+END {
+  for (id in hash) {
+    print "\"add\": { \"doc\": { \"id\": " id ", \"answer\": \"" hash[id] "\" }}, "
+  }
+}
