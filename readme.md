@@ -7,13 +7,19 @@ Setup
 ---
 
 To run locally, you'll need:
-  - [`node`](https://nodejs.org/en/)
+  - [`node` and `npm`](https://nodejs.org/en/)
   - [A Slack API key & bot user](https://api.slack.com/bot-users)
 
 First, export your Slack API key:
 
 ```sh
 $ export SLACK_API_TOKEN="your-slack-api-key-goes-here"
+```
+
+Install dependencies:
+
+```sh
+$ npm install
 ```
 
 Then, run the script:
@@ -78,4 +84,18 @@ Train watson using the following [script](http://www.ibm.com/smarterplanet/us/en
 $ python ./train.py -u {username}:{password} -i ./forum_data/parsed_questions.csv -c {solr_cluster_id} -x example_collection -n "example_ranker"
 ```
 
-Training will take time (+10min).
+Training will take time (+20min).
+
+You can then lob questions against the watson endpoint:
+
+```sh
+$ curl https://{username}:{password}@gateway.watsonplatform.net/retrieve-and-rank/api/v1/solr_clusters/{solr_cluster_id}/solr/example_collection/select?&wt=json&fl=answer&q={your question for watson goes here}
+```
+
+![Example watson response](https://raw.githubusercontent.com/NathanielWroblewski/chatbotTA/master/watson-response.png)
+
+Or you can chat it up with the bot directly:
+
+![Example bot response](https://raw.githubusercontent.com/NathanielWroblewski/chatbotTA/master/bot-response.png)
+
+
