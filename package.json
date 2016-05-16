@@ -1,0 +1,19 @@
+{
+  "name": "chatbot-ta",
+  "version": "1.0.0",
+  "description": "A Slack chatbot that answers questions and learns from students",
+  "main": "slackbot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanielWroblewski/chatbotTA.git"
+  },
+  "author": "NathanielWroblewski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NathanielWroblewski/chatbotTA/issues"
+  },
+  "homepage": "https://github.com/NathanielWroblewski/chatbotTA#readme"
+}
